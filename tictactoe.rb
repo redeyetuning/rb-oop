@@ -1,15 +1,15 @@
-class TicTacToe
-
-	def self.initialize
+module TicTacToe
+	extend self
+	
+	def initialize
 		clear_board
 	end 
 	
-	def self.play
+	def play
 		initialize
 		move(@player) until  @won || grid_full?
 	end
 
-	class << self
 	private
 
 
@@ -63,5 +63,5 @@ class TicTacToe
 				return true
 			end
 		end
-	end
+	
 end

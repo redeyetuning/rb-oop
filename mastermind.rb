@@ -8,19 +8,20 @@
 #To play use Mastermind.play
  
   
-class Mastermind
- 
+module Mastermind
+ extend self
+
   def initialize
   end
    
-  def self.play
+  def play
     puts "Do you want to (G)uess or(C)hoose the secret code?"
     choice = gets.chomp.upcase until choice == "G" || choice == "C"
     choice == "G" ? player_plays : ai_plays
   end
 
-  class << self
-    private
+  
+  private
          
     def player_plays
       i = 1
@@ -98,9 +99,5 @@ class Mastermind
       	return true
       else print " which had #{@lst_match_result[:TM]} EXACT MATCHES and #{@lst_match_result[:CM]} COLOUR ONLY MATCHES \n\n" if print end
     end
-
-
-  end#Singleton class end
-
 
 end#Matermind class end
